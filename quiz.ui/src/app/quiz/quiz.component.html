@@ -1,0 +1,44 @@
+<div class="q-quiz-container">
+    <div class="q-quiz-header">
+        <div class="q-question-number">
+            Question <span>{{ currentIndex + 1 }}</span> of <span>{{ quiz.questions.length }}</span>
+        </div>
+        <div class="q-quiz-name">
+            <span>{{ quiz.name }}</span>
+        </div>
+        <div class="q-creation">
+            Created by <span>{{ quiz.creator }}</span> in <span>{{ quiz.createdOn | date: 'MMM yyyy' }}</span>
+        </div>
+    </div>
+    @if (quizComplete) {
+        <div class="q-quiz-complete-result">
+            You scored
+            <span>{{ score }}</span>
+            out of
+            <span>{{ quiz.questions.length }}</span>
+        </div>
+    }    
+    <div class="q-question-container" [ngClass]="{ 'slide-on': !submittingAnswer, 'slide-off': submittingAnswer }" (animationend)="submitAnswer()">
+        @switch (current.question.questionType) {
+            @case (QT.freeTextAnswer) {
+                <app-question-with-free-text-answer [questionResult]="current" #question></app-question-with-free-text-answer>
+            }
+            @case (QT.multiChoiceAnswer) {
+                <app-question-with-multiple-choice-answer [questionResult]="current" #question></app-question-with-multiple-choice-answer>
+            }
+        }
+    </div>
+
+    @if (!quizComplete) {
+        <div class="q-btn">
+            <button type="button" class="skip" (click)="submittingAnswer = true">Skip</button>
+            <button type="button" class="submit" (click)="submittingAnswer = true">Submit</button>
+        </div>
+    }
+    @else {
+        <div class="q-btn">
+            <button type="button" class="previous" (click)="previousQuestion()">←</button>
+            <button type="button" class="next" (click)="nextQuestion()">→</button>
+        </div>
+    }
+</div>

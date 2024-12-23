@@ -1,0 +1,57 @@
+.q-quiz-header {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba($light-3, 15%);
+    text-transform: uppercase;
+    color: $light-3;
+    font-size: 2rem;
+    line-height: 2rem;
+  
+    .q-quiz-name {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+  
+    @media (max-width: $xxl) {  
+      font-size: 3rem;
+      line-height: 3rem;
+  
+      .q-quiz-name {
+        font-size: 6rem;
+        line-height: 6rem;
+      }
+    }
+  
+    @media (max-width: $xl) {  
+      font-size: 4rem;
+      line-height: 4rem;
+  
+      .q-quiz-name {
+        font-size: 7rem;
+        line-height: 7rem;
+      }
+    }
+  }
+  
+  .q-quiz-header div {
+    align-self: center;
+    text-align: center;
+  
+    span {
+      @extend .font-mystery-quest;
+      color: $red-2;
+      font-weight: 900;
+    }
+  }
+  
+  .q-quiz-header div:first-child {
+    margin-left: 0.2rem;
+  }
+  
+  .q-quiz-header div:last-child {
+    margin-right: 0.2rem;
+  }

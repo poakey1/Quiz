@@ -1,0 +1,25 @@
+.q-question-container {
+  margin-bottom: $mb;
+
+  @media (max-width: $xxl) {  
+    margin-bottom: $mb * 2;
+  }
+
+  @media (max-width: $xl) {  
+    margin-bottom: $mb * 3;
+  }
+}
+
+.q-question-text {
+    color: $light-2;
+    margin-bottom: $mb;
+    font-size: 2rem;
+  
+    @media (max-width: $xxl) {  
+      font-size: 4rem;
+    }
+  
+    @media (max-width: $xl) {  
+      font-size: 6rem;
+    }
+  }

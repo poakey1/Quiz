@@ -1,0 +1,44 @@
+<div class="q-question-text">
+    {{ questionResult.question.text }}
+</div>
+
+<div class="q-question-answer-multiple-choice">    
+    @for (answer of multipleChoiceAnswers; track $index) {
+        <label>
+            @if ($index === 0) {
+                <input name="options" type="radio" 
+                    [value]="answer.text" 
+                    [(ngModel)]="questionResult.pendingAnswer" 
+                    [disabled]="questionResult.isAnswered" 
+                    (keyup.enter)="submit()" 
+                    #firstOption>
+            }
+            @else {
+                <input name="options" type="radio" 
+                    [value]="answer.text" 
+                    [(ngModel)]="questionResult.pendingAnswer" 
+                    [disabled]="questionResult.isAnswered" 
+                    (keyup.enter)="submit()">
+            }
+            {{answer.text}}
+        </label>
+    }
+    
+
+    @if (questionResult.isAnswered) {
+      <div class="q-question-result-indicator">
+        @if (questionResult.isCorrect) {
+            <div class="q-correct">
+                <span>✔</span>
+                {{explanation}}
+            </div>
+        }
+        @else {
+            <div class="q-incorrect">
+                <span>✖</span>
+                {{explanation}}
+            </div>
+        }            
+    </div>  
+    }
+</div>

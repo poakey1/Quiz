@@ -1,0 +1,15 @@
+$dark-1: #121212;
+$dark-2: lighten($dark-1, 15%);
+$dark-3: lighten($dark-1, 30%);
+
+$light-1: #d3d3d3;
+$light-2: darken($light-1, 15%);
+$light-3: darken($light-1, 30%);
+
+$red-1: #dc0000;
+$red-2: darken($red-1, 15%);
+$red-3: darken($red-1, 30%);
+
+$green-1: #00dc00;
+$green-2: darken($green-1, 15%);
+$green-3: darken($green-1, 30%);

@@ -1,0 +1,59 @@
+.q-question-free-text {
+    font-size: 2rem;
+  
+    @media (max-width: $xxl) {  
+      font-size: 4rem;
+    }
+  
+    @media (max-width: $xl) {  
+      font-size: 6rem;
+    }
+  }
+  
+  .q-question-answer-free-text input {
+    width: 100%;
+    background-color: rgba($light-1, 4%);
+    color: $light-1;
+    border-bottom: solid $light-1;
+  }
+  
+  .q-question-answer-free-text input:hover {
+    transform: scale(102%);
+    background-color: rgba($light-1, 8%);
+  }
+  
+  .q-question-result-indicator-free-text {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  
+    @media (max-width: $xxl) {  
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+  
+    @media (max-width: $xl) {  
+      font-size: 4.5rem;
+      line-height: 4.5rem;
+    }
+  
+    div {
+      padding: 2rem;
+      border-style: solid;
+      border-radius: 1.2rem;
+      border-width: 0.2rem;
+    }
+  
+    .q-incorrect-free-text {
+      color: $red-2;
+      border-color: rgba($red-1, 20%);
+      background-color: rgba($red-1, 10%);
+    }
+  
+    .q-correct-free-text {
+      color: $green-2;
+      border-color: rgba($green-1, 20%);
+      background-color: rgba($green-1, 10%);
+    }
+  }

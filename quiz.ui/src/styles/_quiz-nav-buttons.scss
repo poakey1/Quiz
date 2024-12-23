@@ -1,0 +1,60 @@
+.q-btn {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 2rem;
+  
+    @media (max-width: $xxl) {  
+      font-size: 4rem;
+    }
+  
+    @media (max-width: $xl) {  
+      font-size: 6rem;
+    }
+  
+    button {
+      cursor: pointer;
+      background-color: transparent;
+      border: solid 0.125rem $light-1;
+      text-transform: uppercase;
+      color: $light-1;
+      align-self: center;
+      padding: 0.2rem 3rem;
+  
+      @media (max-width: $xxl) {  
+        padding: 0.4rem 5rem;
+      }
+    
+      @media (max-width: $xl) {  
+        padding: 0.6rem 7rem;
+      }
+    }   
+  
+    button:hover, button:focus {
+      transform: scale(102%);
+      filter: drop-shadow(0.2rem 0.2rem 0.2rem #fff);
+    }
+  }
+  
+  .q-btn button.skip {
+    border-radius: 0rem 0rem 0rem 10rem;
+    border-right-width: 0.0625rem;
+    background-color: rgba($red-2, 50%);
+  }
+  
+  .q-btn button.submit {
+    border-radius: 0rem 10rem 0rem 0rem;
+    border-left-width: 0.0625rem;
+    background-color: rgba($green-2, 50%);
+  }
+  
+  .q-btn button.previous {
+    border-radius: 0rem 0rem 0rem 10rem;
+    border-right-width: 0.0625rem;
+    background-color: rgba($red-2, 50%);
+  }
+  
+  .q-btn button.next {
+    border-radius: 0rem 10rem 0rem 0rem;
+    border-left-width: 0.0625rem;
+    background-color: rgba($green-2, 50%);
+  }

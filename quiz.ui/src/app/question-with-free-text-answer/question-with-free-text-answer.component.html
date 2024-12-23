@@ -1,0 +1,25 @@
+<div class="q-question-free-text">
+    <div class="q-question-text">
+        {{ questionResult.question.text }}
+    </div>
+
+    <div class="q-question-answer-free-text">    
+        <input type="text" [(ngModel)]="questionResult.pendingAnswer" [disabled]="questionResult.isAnswered" (keyup.enter)="submit()" #questionInput>
+        @if (questionResult.isAnswered) {
+        <div class="q-question-result-indicator-free-text">
+            @if (questionResult.isCorrect) {
+                <div class="q-correct-free-text">
+                    <span>✔</span>
+                    {{questionResult.question.answers[0].explanation}}
+                </div>
+            }
+            @else {
+                <div class="q-incorrect-free-text">
+                    <span>✖</span>
+                    {{questionResult.question.answers[0].explanation}}
+                </div>
+            }            
+        </div>  
+        }
+    </div>
+</div>

@@ -1,0 +1,65 @@
+@mixin dots($count) {
+    $text-shadow: ();
+    @for $i from 0 through $count {
+      $text-shadow: $text-shadow,
+                   (-.5+(random()) * 3) + em
+                   (-.5+(random()) * 3) + em
+                   7px
+                   hsla(random() * 360, 100%, 30%,.9);
+    }
+    text-shadow: $text-shadow;
+  }
+  
+  .orbs-1, .orbs-2 {
+    display: block;
+    font-size: 50px;
+    color: transparent;
+    z-index: -99;
+  }
+  
+  .orbs-1::before, .orbs-1::after,
+  .orbs-2::before, .orbs-2::after {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 3em;
+    height: 3em;
+    content: '.';
+    mix-blend-mode: screen;
+    animation: 44s -27s move infinite ease-in-out alternate;
+  }
+  
+  
+  .orbs-2::before {
+    @include dots(14);
+    animation-duration: 44s;
+    animation-delay: -27s;
+  }
+  
+  .orbs-2::after {
+    @include dots(14);
+    animation-duration: 43s;
+    animation-delay: -32s;
+  }
+  
+  .orbs-1::before {
+    @include dots(14);
+    animation-duration: 42s;
+    animation-delay: -23s;
+  }
+  
+  .orbs-1::after {
+    @include dots(14);
+    animation-duration: 41s;
+    animation-delay: -19s;
+  }
+  
+  @keyframes move {
+    from {
+      transform: rotate(0deg) scale(12) translateX(-20px);
+    }
+    to {
+      transform: rotate(360deg) scale(18) translateX(20px);
+    }
+  }
+  

@@ -1,0 +1,46 @@
+@import "reset.scss";
+@import "variables.scss";
+@import "colours.scss";
+@import "fonts.scss";
+
+@import "_quiz-header.scss";
+@import "_quiz-nav-buttons.scss";
+@import "_quiz-complete-result.scss";
+
+@import "_question-shared.scss";
+@import "_question-with-free-text-answer.scss";
+@import "_question-with-multiple-choice-answer.scss";
+
+html {
+  font-size: 0.9vw;
+}
+
+body {
+  @extend .font-roboto-flex-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $dark-1;
+  color: $light-1;
+  min-height: 100vh;
+}
+
+.q-navbar {
+  display: none;
+}
+
+.q-quiz-container {
+  overflow: hidden;
+  padding: 2rem;
+  width: 60rem;
+  margin-top: 8rem;
+    
+  @media (max-width: $xxl) {  
+    width: 80rem;
+  }
+
+  @media (max-width: $xl) {  
+    width: 100rem;
+  }
+}

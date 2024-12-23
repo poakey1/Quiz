@@ -1,0 +1,55 @@
+.q-question-answer-multiple-choice {
+    label {
+        line-height: 1.4;
+        display: inline-flex;
+        gap: 0.4em;
+        font-size: 2rem;
+        width: 50%;
+
+        @media (max-width: $xxl) {  
+            font-size: 4rem;
+          }
+        
+          @media (max-width: $xl) {  
+            font-size: 6rem;
+          }
+    }
+
+    label:nth-child(even) {
+        
+      }
+}
+
+input[type="radio"] {
+    appearance: none;
+    background-color: $dark-1;
+    margin: 0;
+    font: inherit;
+    color: $light-1;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid $light-1;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em $red-1;
+  }
+
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+  input[type="radio"]:focus {
+    outline: max(2px, 0.1em) solid $light-2;
+    outline-offset: max(2px, 0.1em);
+  }

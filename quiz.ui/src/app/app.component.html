@@ -1,0 +1,15 @@
+<header>
+  <nav class="q-navbar">
+    <a class="q-navbar-brand" href="#">
+      <img src="quiz.svg" alt="Quiz Logo" width="32" height="32">
+    </a>
+    <div class="q-navbar-links">
+      <a routerLinkActive="active" [routerLink]="['home']">Home</a>
+      <a routerLinkActive="active" [routerLink]="['sandbox']">Sandbox</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <router-outlet />
+</main>

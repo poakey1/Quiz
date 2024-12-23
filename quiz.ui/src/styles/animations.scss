@@ -1,0 +1,27 @@
+.slide-on {
+    animation: slideon 200ms;
+  }
+  
+  .slide-off {
+    animation: slideoff 600ms;
+  }
+  
+  @keyframes slideoff {
+    20% {
+      translate: -3%;
+    }
+    100% {
+      translate: 150%;
+    }
+  }
+  
+  @keyframes slideon {
+    from {
+      margin-left: 100%;
+      width: 300%; 
+    }
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
